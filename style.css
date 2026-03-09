@@ -1,0 +1,291 @@
+/* ===================== VARIABLES ===================== */
+:root {
+  --bg: #0a0e1a;
+  --card-bg: #111827;
+  --border: #1e2d45;
+  --accent: #00d4ff;
+  --accent2: #7c3aed;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --green: #22c55e;
+  --font-ar: 'Tajawal', sans-serif;
+  --font-code: 'Fira Code', monospace;
+}
+
+/* ===================== BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ar);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===================== BACKGROUND GRID ===================== */
+.bg-grid {
+  display: none;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 20px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.3);
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-family: var(--font-code);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 60%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  font-family: var(--font-code);
+  margin-bottom: 24px;
+}
+
+.status-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--green);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+.dot.green { background: var(--green); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ===================== MAIN ===================== */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===================== CARD ===================== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0,212,255,0.3);
+  transform: translateY(-2px);
+}
+.card:hover::before { opacity: 1; }
+
+.card-label {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: rgba(0,212,255,0.4);
+  letter-spacing: 1px;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  padding-top: 4px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 0.97rem;
+}
+
+.card p strong {
+  color: var(--accent);
+}
+
+code {
+  font-family: var(--font-code);
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.15);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+/* ===================== PIPELINE ===================== */
+.pipeline-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 150px;
+  background: rgba(0,212,255,0.05);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.step-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.step-text strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+}
+
+.arrow {
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.pipeline-note {
+  margin-top: 8px;
+  font-size: 0.88rem !important;
+  border-right: 3px solid var(--accent2);
+  padding-right: 14px;
+}
+
+/* ===================== BUTTON ===================== */
+.main-btn {
+  margin-top: 20px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,212,255,0.3);
+}
+
+.main-btn:active {
+  transform: translateY(0);
+}
+
+/* ===================== MSG BOX ===================== */
+.msg-box {
+  margin-top: 20px;
+  padding: 20px 24px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 12px;
+  font-family: var(--font-code);
+  font-size: 0.88rem;
+  color: var(--green);
+  line-height: 1.8;
+  animation: fadeIn 0.4s ease;
+}
+
+.msg-box.hidden { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-family: var(--font-code);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 600px) {
+  .card { padding: 24px 18px; }
+  .pipeline-steps { flex-direction: column; }
+  .arrow { transform: rotate(90deg); }
+}

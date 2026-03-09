@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud CI/CD - Dima Al-Buheisi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="hero">
+    <div class="badge">Cloud Computing Assignment</div>
+    <h1>Dima Al-Buheisi</h1>
+    <p class="subtitle">CI/CD with GitHub Actions + GitHub Pages</p>
+    <div class="status-bar">
+      <span class="dot green"></span> Pipeline Active
+      <span class="dot green" style="margin-right:16px"></span> Site Deployed
+    </div>
+  </header>
+  <main>
+    <section class="card" id="cicd-section">
+      <div class="card-label">01</div>
+      <h2>What is CI/CD?</h2>
+      <p>
+        CI/CD stands for <strong>Continuous Integration</strong> and <strong>Continuous Deployment</strong>.
+        It is a modern software development practice that automates the process of building, testing, and deploying code.
+        Every time a developer pushes new code, the CI/CD pipeline automatically runs checks to ensure nothing is broken.
+        If all checks pass, the code is automatically deployed to the live environment without any manual steps.
+        This approach reduces human error, speeds up delivery, and ensures the application is always in a working state.
+        CI/CD is a core pillar of DevOps and cloud-native development.
+      </p>
+    </section>
+    <section class="card" id="pipeline-section">
+      <div class="card-label">02</div>
+      <h2>My Pipeline</h2>
+      <div class="pipeline-steps">
+        <div class="step">
+          <div class="step-icon">Push</div>
+          <div class="step-text"><strong>Push to main</strong><br/>I commit and push my code to GitHub</div>
+        </div>
+        <div class="arrow">>></div>
+        <div class="step">
+          <div class="step-icon">Check</div>
+          <div class="step-text"><strong>CI: Build & Check</strong><br/>GitHub Actions verifies all required files exist</div>
+        </div>
+        <div class="arrow">>></div>
+        <div class="step">
+          <div class="step-icon">Deploy</div>
+          <div class="step-text"><strong>CD: Deploy</strong><br/>Site is automatically published to GitHub Pages</div>
+        </div>
+      </div>
+      <p class="pipeline-note">
+        After every push to the <code>main</code> branch, GitHub Actions runs the <code>deploy.yml</code> workflow.
+        It first checks that <code>index.html</code>, <code>style.css</code>, and <code>script.js</code> all exist.
+        Then it uploads the files and deploys the site live — no manual action needed.
+      </p>
+    </section>
+    <section class="card" id="interactive-section">
+      <div class="card-label">03</div>
+      <h2>Interactive Demo</h2>
+      <p>Click the button to see CI/CD in action — just like pushing to GitHub triggers the pipeline!</p>
+      <button id="btn" class="main-btn">Trigger Pipeline</button>
+      <div id="msg" class="msg-box hidden"></div>
+    </section>
+  </main>
+  <footer>
+    <p>Dima Al-Buheisi &nbsp;|&nbsp; Cloud Computing &nbsp;|&nbsp; Deployed via GitHub Actions</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
