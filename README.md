@@ -7,9 +7,8 @@ A static website automatically deployed to GitHub Pages using GitHub Actions CI/
 
 ## Live Site
 
-[https://dimaalbohisi.github.io/loud-beginner-cicd-pages-DimaBuheisi](https://dimaalbohisi.github.io/loud-beginner-cicd-pages-DimaBuheisi)
+https://dimaalbohisi.github.io/cloud-beginner-cicd-pages-DimaBuheisi/
 
-Replace the link above with your actual GitHub Pages URL after deployment.
 
 ## Project Files
 
