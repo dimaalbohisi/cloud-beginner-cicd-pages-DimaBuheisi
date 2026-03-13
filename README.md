@@ -23,8 +23,7 @@ https://dimaalbohisi.github.io/cloud-beginner-cicd-pages-DimaBuheisi/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/dimaalbohisi/loud-beginner-cicd-pages-DimaBuheisi.git
-   ```
+git clone https://github.com/dimaalbohisi/cloud-beginner-cicd-pages-DimaBuheisi.git   ```
 2. Open `index.html` directly in your browser — no server needed.
 
 ## How the Pipeline Works
